@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="movies">
+    <!-- 
+        Css link
+    -->
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/respon.css">
+
+    <!-- 
+        cdn link
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                    fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <title>Baby | Care</title>
+</head>
+<body>
+    <!-- 
+        for mobile start
+    -->
+    <div class="header-mobile px-2 py-3 hidden bg-blue-900 sticky top-0 z-10">
+        <div class="main-box flex justify-between items-center">
+            <div class="logo">
+                <a href="#">
+                    <img src="./assets/images/logo/logo.png" alt="">
+                </a>
+            </div>
+            <div class="open-menu" onclick="openNav()">
+                <i class="fa fa-bars flex justify-center items-center text-yellow-400 font-bold text-2xl"></i>
+            </div>
+        </div>
+        <div class="form relative mt-5">
+            <form action="#" method="post">
+                <input type="text" placeholder="Search Product...!" class="p-2 border-0 outline-0 rounded w-full text-md">
+                <button class="border-0 outline-0 p-2 w-10 bg-yellow-500 text-white w-24 font-medium rounded-r absolute top-0 right-0 flex items-center text-md">
+                    <i class="fa fa-search"></i>&nbsp;Search
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="nav-mobile fixed top-0 right-0 bg-white h-full w-0 transition-all duration-75 z-20 hidden overflow-x-hidden" id="myNav">
+        <div class="clode-menu absolute top-2 left-6 closebtn" onclick="closeNav()">
+            <i class="fa fa-times flex justify-center items-center font-bold text-3xl"></i>
+        </div>
+        <ul class="pt-12">
+            <li class="py-3 w-full pl-5"><a href="#" class="text-sm font-medium p-2">Home</a></li>
+            <li class="py-3 w-full pl-5"><a href="#" class="text-sm font-medium p-2">Shop</a></li>
+            <li class="py-3 w-full pl-5"><a href="#" class="text-sm font-medium p-2">Element</a></li>
+            <li class="py-3 w-full pl-5"><a href="#" class="text-sm font-medium p-2">Page</a></li>
+            <li class="py-3 w-full pl-5"><a href="#" class="text-sm font-medium p-2">Gallery</a></li>
+            <li class="py-3 w-full pl-5"><a href="#" class="text-sm font-medium p-2">Categories</a></li>
+        </ul>
+    </div>
+    <!-- 
+        for mobile end
+    -->
+
+    <!-- 
+        header start    
+    -->
+    <header class="bg-blue-900 p-5 flex justify-between items-center">
+        <div class="logo">
+            <img src="./assets/images/logo/logo.png" alt="">
+        </div>
+        <div class="form relative">
+            <form action="#" method="post">
+                <input type="text" placeholder="Search Product...!" class="p-2 border-0 outline-0 rounded-full w-full px-5 text-md">
+                <button class="border-0 outline-0 p-2 w-10 bg-yellow-500 text-white rounded-r-full w-24 font-medium absolute top-0 right-0 flex items-center text-md"><i class="fa fa-search"></i>&nbsp;Search</button>
+            </form>
+        </div>
+    </header>
+    <!-- 
+        header end    
+    -->
+
+    <!-- 
+        menu start
+    -->
+    <nav class="bg-white px-5 shadow sticky top-0 z-10">
+        <div class="menu py-3 flex justify-between items-cemter">
+            <ul>
+                <li class="inline-block w-64">
+                    <a href="#" class="block text-lg font-medium flex items-center py-2 hover:text-blue-900 transition-all duration-300">
+                        <i class="fa fa-bars"></i>&emsp;
+                        <p>Shop By Categories</p>
+                    </a>
+                </li>
+                <li class="inline-block"><a href="#" class="block font-medium text-md px-5 py-2 hover:text-blue-900 transition-all duration-300">Home</a></li>
+                <li class="inline-block"><a href="#" class="block font-medium text-md px-5 py-2 hover:text-blue-900 transition-all duration-300">Shop</a></li>
+                <li class="inline-block"><a href="#" class="block font-medium text-md px-5 py-2 hover:text-blue-900 transition-all duration-300">Element</a></li>
+                <li class="inline-block"><a href="#" class="block font-medium text-md px-5 py-2 hover:text-blue-900 transition-all duration-300">Page</a></li>
+                <li class="inline-block"><a href="#" class="block font-medium text-md px-5 py-2 hover:text-blue-900 transition-all duration-300">Gallery</a></li>
+            </ul>
+            <div class="top-offer py-2">
+                <a href="#" class="text-lg font-medium hover:text-yellow-400 transition-all duration-300">Top Offers</a>
+            </div>
+        </div>
+    </nav>
+    <!-- 
+        menu end
+    -->
+
+    <!-- 
+        banner start
+    -->
+    <div class="banner relative">
+        <img src="./assets/images/product/3/parallax-bg.jpg" alt="">
+    </div>
+    <!-- 
+        banner end
+    -->
+
+    <!-- 
+        blog-1 start
+    -->
+    <div class="blog-1 px-5">
+        <h1 class="text-center text-3xl py-12 font-bold">Shop By Categories</h1>
+        <div class="grid grid-cols-12 gap-10">
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/1.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Activity Book</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/2.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Boy Fashion</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/3.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Diapers</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/4.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Footwear</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/5.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Lotion-Oils</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/6.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">School Bag</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/7.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Soft Toy</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/8.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Baby Bather</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/9.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Carrycots</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/10.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Feeding Items</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/11.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Girl Fashion</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+            <div class="col-span-2">
+                <div class="images rounded-full">
+                    <img src="./assets/images/product/1/12.jpg" alt="" class="rounded-full w-full">
+                </div>
+                <h1 class="text-center w-full font-medium py-2 text-md">Milk Power</h1>
+                <p class="text-center text-gray-500 text-sm">1 items</p>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        blog-1 end
+    -->
+
+    <!-- 
+        blog-2 start
+    -->
+    <div class="blog-2 px-5 mt-20">
+        <div class="grid grid-cols-12 gap-10">
+            <div class="col-span-4 relative">
+                <div class="images rounded">
+                    <img src="./assets/images/product/2/banner-cms-01.jpg" alt="" class="w-full rounded">
+                    <div class="title absolute top-0 left-0 px-2 py-12 w-1/2">
+                        <p class="bg-white px-2 rounded text-sm font-medium w-36 text-center">HEALTHY MEALS</p>
+                        <h1 class="text-3xl font-medium text-white py-5">Special Deal<br><span class="font-bold">Power Milk</span></h1>
+                        <p class=" text-sm font-medium text-white">Flat 45% off</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-4 relative">
+                <div class="images rounded">
+                    <img src="./assets/images/product/2/banner-cms-02.jpg" alt="" class="w-full rounded">
+                    <div class="title absolute top-0 left-0 px-2 py-12 w-1/2">
+                        <p class="bg-white px-2 rounded text-sm font-medium w-36 text-center">UP TO 25% OFF</p>
+                        <h1 class="text-3xl font-medium text-white py-5">Biscuits Bite<br><span class="font-bold">For Kids.</span></h1>
+                        <p class=" text-sm font-medium text-white">From $69</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-4 relative">
+                <div class="images rounded">
+                    <img src="./assets/images/product/2/banner-cms-03.jpg" alt="" class="w-full rounded">
+                    <div class="title absolute top-0 left-0 px-2 py-12 w-1/2">
+                        <p class="bg-white px-2 rounded text-sm font-medium w-36 text-center">BABY DIAPERS</p>
+                        <h1 class="text-3xl font-medium text-white py-5">Baby Care<br><span class="font-bold">Dry Diapers.</span></h1>
+                        <p class=" text-sm font-medium text-white">1kg-5kg / 40Pcs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        blog-2 end
+    -->
+
+    <!-- 
+        blog-3 start
+    -->
+    <div class="blog-3 px-5 mt-10">
+        <div class="grid grid-cols-12 gap-10">
+            <div class="col-span-3">
+                <div class="box bg-red-600 rounded p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/2/banner-cms-04.jpg" alt="" class="rounded w-full h-full">
+                    </div>
+                    <div class="title w-full">
+                        <h1 class="text-center text-white text-2xl font-medium py-2">Natural Food 3 Pack</h1>
+                        <div class="border-b border-gray-300"></div>
+                        <p class="text-center text-white py-2">Flat 15% OFF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="box bg-blue-600 rounded p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/2/banner-cms-05.jpg" alt="" class="rounded w-full h-full">
+                    </div>
+                    <div class="title w-full">
+                        <h1 class="text-center text-white text-2xl font-medium py-2">New Arrival Milk Powder</h1>
+                        <div class="border-b border-gray-300"></div>
+                        <p class="text-center text-white py-2">Buy 2 Get 1 FREE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="box bg-pink-600 rounded p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/2/banner-cms-06.jpg" alt="" class="rounded w-full h-full">
+                    </div>
+                    <div class="title w-full">
+                        <h1 class="text-center text-white text-2xl font-medium py-2">Activity Book For Kids</h1>
+                        <div class="border-b border-gray-300"></div>
+                        <p class="text-center text-white py-2">$39.00 $59.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="box bg-orange-600 rounded p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/2/banner-cms-7.jpg" alt="" class="rounded w-full h-full">
+                    </div>
+                    <div class="title w-full">
+                        <h1 class="text-center text-white text-2xl font-medium py-2">Stylish Baby Dresses</h1>
+                        <div class="border-b border-gray-300"></div>
+                        <p class="text-center text-white py-2">Up to 35% OFF</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        blog-3 end
+    -->
+
+    <!-- 
+        blog-4 start    
+    -->
+    <div class="blog-4 px-5">
+        <h1 class="text-center text-3xl py-12 font-bold">Our Latest News</h1>
+        <div class="grid grid-cols-12 gap-10">
+            <div class="col-span-3">
+                <div class="box p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/4/1.jpg" alt="" class="rounded w-full">
+                    </div>
+                    <p class="text-sm text-gray-500 pt-2">15-October-2022</p>
+                    <h1 class="text-md font-medium py-2">A beautiful sunday morning lorem make finibus bonorum renaissance</h1>
+                    <p class="text-sm text-gray-500">You’re only as good as your last collection, which is an enormous pressure.</p>
+                    <div class="mt-5">
+                        <a href="#" class="bg-yellow-500 px-5 py-2 rounded text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="box p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/4/2.jpg" alt="" class="rounded w-full">
+                    </div>
+                    <p class="text-sm text-gray-500 pt-2">15-October-2022</p>
+                    <h1 class="text-md font-medium py-2">Risus retium tortor metus fringilla nullam classical literature</h1>
+                    <p class="text-sm text-gray-500">Mauris torquent mi eget et amet phas ellus eget ad ullam corper mi a ferm</p>
+                    <div class="mt-5">
+                        <a href="#" class="bg-yellow-500 px-5 py-2 rounded text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="box p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/4/3.jpg" alt="" class="rounded w-full">
+                    </div>
+                    <p class="text-sm text-gray-500 pt-2">15-October-2022</p>
+                    <h1 class="text-md font-medium py-2">Urna pretium elit mauris cursus curabitu letraset sheets spectacles</h1>
+                    <p class="text-sm text-gray-500">You’re only as good as your last collection, which is an enormous pressure.</p>
+                    <div class="mt-5">
+                        <a href="#" class="bg-yellow-500 px-5 py-2 rounded text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="box p-2">
+                    <div class="images rounded">
+                        <img src="./assets/images/product/4/4.jpg" alt="" class="rounded w-full">
+                    </div>
+                    <p class="text-sm text-gray-500 pt-2">15-October-2022</p>
+                    <h1 class="text-md font-medium py-2">Vitae magnis fusce laoreet porttitor hampden sydney literature</h1>
+                    <p class="text-sm text-gray-500">You’re only as good as your last collection, which is an enormous pressure.</p>
+                    <div class="my-5">
+                        <a href="#" class="bg-yellow-500 px-5 py-2 rounded text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        blog-4 end    
+    -->
+
+    <!-- 
+        footer start    
+    -->
+    <footer class="px-5 bg-gray-900 py-2">
+        <div class="grid grid-cols-12 gap-10">
+            <div class="col-span-3">
+                <h1 class="text-white text-lg font-bold py-2">Store Information</h1>
+                <p class="text-white text-sm py-1">502 New design str, melbourne, san francisco, CA 94110, united states of america​ australia.</p>
+                <p class="text-white text-sm py-1">(+00) 123-456-789</p>
+                <p class="text-white text-sm py-1">demo@company.com</p>
+                <a href="#" class="inline-block px-0 py-2"><i class="bg-gray-700 border border-gray-600 hover:bg-gray-500 transition-all duration-300 w-10 h-10 flex justify-center items-center rounded-full text-white fab fa-facebook"></i></a>
+                <a href="#" class="inline-block px-2 py-2"><i class="bg-gray-700 border border-gray-600 hover:bg-gray-500 transition-all duration-300 w-10 h-10 flex justify-center items-center rounded-full text-white fab fa-instagram"></i></a>
+                <a href="#" class="inline-block px-0 py-2"><i class="bg-gray-700 border border-gray-600 hover:bg-gray-500 transition-all duration-300 w-10 h-10 flex justify-center items-center rounded-full text-white fab fa-twitter"></i></a>
+            </div>
+            <div class="col-span-3">
+                <h1 class="text-white text-lg font-bold py-2">Our Services</h1>
+                <ul>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Your account</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Return center</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Purchase</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;App download</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Latest news</a></li>
+                </ul>
+            </div>
+            <div class="col-span-3">
+                <h1 class="text-white text-lg font-bold py-2">Information</h1>
+                <ul>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;About us</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Contact us</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Terms & conditions</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Returns & exchanges</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Shipping & delivery</a></li>
+                </ul>
+            </div>
+            <div class="col-span-3">
+                <h1 class="text-white text-lg font-bold py-2">My Account</h1>
+                <ul>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Order history</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Wishlist</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Contact Us</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;About us</a></li>
+                    <li class="py-2"><a href="#" class="text-white hover:text-blue-900 transition-all duration-300 text-sm"><i class="fa fa-chevron-right"></i>&nbsp;Our work</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- 
+        footer end    
+    -->
+    <!-- 
+        script link
+    -->
+    <script src="./assets/script.js"></script>
+</body>
+</html>
